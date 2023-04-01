@@ -5,6 +5,8 @@ import styles from "@/styles/Home.module.css";
 import { getApod } from "@/services/getApod";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import Image from "next/image";
+import { NavBar } from "@/components/Navbar";
+import { Layout } from "@/components/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +17,8 @@ export default function Home() {
 
   if (isLoading) return <main className={styles.main}>Loading...</main>;
 
+  console.log(data);
+
   return (
     <>
       <Head>
@@ -23,15 +27,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <Layout>
+      <h1>Home Page</h1>
         <Image
-          src={data?.data.hdurl}
+          src={data?.data.url}
           alt="NASA Astronomy Picture of the Day"
           width={990}
           height={540}
           style={{ aspectRatio: 1 }}
         />
-      </main>
+      </Layout>
     </>
   );
 }
