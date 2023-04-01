@@ -1,0 +1,20 @@
+.navBar{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  font-family: 'Roboto Mono', monospace;
+  box-shadow: 0px 2px 2px -2px rgba(0,0,0,0.5);
+}
+
+.navBar li{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  list-style: none;
+  gap: 6em;
+  padding-right: 10em;
+}
+
+.navBar li ul{
+  cursor: pointer;
+}
